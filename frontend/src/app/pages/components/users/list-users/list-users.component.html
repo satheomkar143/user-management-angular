@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h3>All Users</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="editUser(user._id)">
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteUser(user._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-success" (click)="createUser()">Add New User</button>
+</div>
